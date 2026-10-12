@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+
+<h2>Calculator</h2>
+
+<input id="op" placeholder="+, -, *, /">
+<input id="n1" type="number" placeholder="First Number">
+<input id="n2" type="number" placeholder="Second Number">
+
+<button onclick="calc()">Calculate</button>
+
+<h3 id="ans"></h3>
+
+<script>
+
+function calc() {
+    let op = document.getElementById("op").value;
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let r;
+
+    if (op == "+") r = a + b;
+    else if (op == "-") r = a - b;
+    else if (op == "*") r = a * b;
+    else if (op == "/") r = a / b;
+    else r = "Invalid Operation";
+
+    document.getElementById("ans").innerHTML = "Answer = " + r;
+}
+
+</script>
+
+</body>
+</html>

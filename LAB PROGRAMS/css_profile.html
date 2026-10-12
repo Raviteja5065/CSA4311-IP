@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #666;
+        }
+
+        .background {
+            height: 410px;
+            background: linear-gradient(120deg, #ff3290, #ff897b);
+        }
+
+        .profile {
+            width: 75%;
+            min-height: 560px;
+            margin: -220px auto 40px;
+            background: white;
+            border-radius: 35px;
+            box-shadow: 0 15px 30px #ddd;
+            text-align: center;
+            position: relative;
+            padding: 140px 25px 40px;
+            box-sizing: border-box;
+        }
+
+        .photo {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 25px #ddd;
+        }
+
+        .links {
+            position: absolute;
+            top: 55px;
+            left: 6%;
+            right: 6%;
+            display: flex;
+            justify-content: space-between;
+            color: #ff4081;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            font-size: 17px;
+        }
+
+        .about {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-top: 45px;
+        }
+
+        @media (max-width: 600px) {
+            .profile {
+                width: 92%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .photo {
+                width: 150px;
+                height: 150px;
+                top: -40px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .about {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="profile">
+
+        <div class="links">
+            <span>👥 Connect</span>
+            <span>💬 Message</span>
+        </div>
+
+        <img src="profile.jpg" alt="My Profile Photo" class="photo">
+
+        <h1>CHALLA RAVITEJA</h1>
+
+        <p class="location">Andhra Pradesh, India</p>
+
+        <div class="about">
+            <p>B.Tech CSE - Artificial Intelligence and Machine Learning</p>
+            <p>Saveetha School of Engineering</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
