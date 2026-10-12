@@ -1,0 +1,13 @@
+1. Interpret each step in the communication flow.
+Step 1: User enters a URL in the browser
+The user enters a website address, such as www.google.com, into the browser.
+Step 2: DNS lookup occurs
+DNS (Domain Name System) converts the domain name into an IP address so the browser can locate the server.
+Step 3: HTTP request is sent
+The browser sends an HTTP request to the server to request the webpage or other resources.
+Step 4: Server processes the request
+The server receives the request, processes it, accesses a database if necessary, and prepares a response.
+Step 5: Response is returned
+The server sends an HTTP response containing a status code, headers, and usually the requested content, such as HTML.
+Step 6: Browser renders the page
+The browser processes the HTML, CSS, and JavaScript and displays the webpage to the user.
