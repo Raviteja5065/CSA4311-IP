@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body { font-family: Arial; background: #f0f8ff; text-align: center; }
+        input, button { padding: 10px; margin: 8px; }
+        table { margin: auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Online Library Management System</h1>
+    <input type="text" id="book" placeholder="Enter book name">
+    <button onclick="searchBook()">Search</button>
+    <p id="result"></p>
+
+    <table>
+        <tr><th>Book</th><th>Author</th><th>Status</th></tr>
+        <tr><td>Web Technology</td><td>John</td><td>Available</td></tr>
+        <tr><td>Java Programming</td><td>James</td><td>Issued</td></tr>
+    </table>
+
+    <script>
+        function searchBook() {
+            let book = document.getElementById("book").value.toLowerCase();
+            if (book === "web technology")
+                document.getElementById("result").innerHTML =
+                    "Web Technology is Available.";
+            else if (book === "java programming")
+                document.getElementById("result").innerHTML =
+                    "Java Programming is Issued.";
+            else
+                document.getElementById("result").innerHTML =
+                    "Book not found.";
+        }
+    </script>
+</body>
+</html>

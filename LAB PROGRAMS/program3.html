@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Ticket Booking</title>
+    <style>
+        body { font-family: Arial; background: #eaf7ea; text-align: center; }
+        input, select, button { padding: 10px; margin: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Online Bus Ticket Booking</h1>
+    <h3>Chennai to Bangalore</h3>
+    <p>Ticket Price: ₹500 per person</p>
+
+    <input type="text" id="name" placeholder="Passenger Name">
+    <input type="number" id="tickets" placeholder="Number of Tickets" min="1">
+    <button onclick="bookTicket()">Book Ticket</button>
+
+    <p id="result"></p>
+
+    <script>
+        function bookTicket() {
+            let name = document.getElementById("name").value;
+            let tickets = Number(document.getElementById("tickets").value);
+
+            if (name.trim() === "" || tickets < 1 || !Number.isInteger(tickets)) {
+                document.getElementById("result").innerHTML =
+                    "Enter a valid name and ticket quantity.";
+            } else {
+                let total = tickets * 500;
+                document.getElementById("result").innerHTML =
+                    "Booking successful for " + name +
+                    ". Total amount: ₹" + total;
+            }
+        }
+    </script>
+</body>
+</html>

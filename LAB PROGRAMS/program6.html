@@ -1,0 +1,31 @@
+
+<html>
+<body>
+<h2>Cake Ordering System</h2>
+
+Enter Name:
+<input id="name"><br><br>
+
+Select Cake:
+<select id="cake">
+  <option>Chocolate Cake</option>
+  <option>Vanilla Cake</option>
+  <option>Black Forest Cake</option>
+</select><br><br>
+
+<button onclick="order()">Order Cake</button>
+
+<p id="result"></p>
+
+<script>
+function order() {
+  let n = document.getElementById("name").value;
+  let c = document.getElementById("cake").value;
+
+  document.getElementById("result").innerHTML =
+    "Cake ordered by " + n + ": " + c;
+}
+</script>
+
+</body>
+</html>

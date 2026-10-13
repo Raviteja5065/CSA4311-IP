@@ -1,0 +1,37 @@
+
+<html>
+<body>
+<h2>Hospital Appointment Booking</h2>
+
+Patient Name:
+<input id="name"><br><br>
+
+Select Doctor:
+<select id="doctor">
+  <option>Cardiologist</option>
+  <option>Dentist</option>
+  <option>General Physician</option>
+</select><br><br>
+
+Select Date:
+<input type="date" id="date"><br><br>
+
+<button onclick="book()">Book Appointment</button>
+
+<p id="result"></p>
+
+<script>
+function book() {
+  let n = document.getElementById("name").value;
+  let d = document.getElementById("doctor").value;
+  let t = document.getElementById("date").value;
+
+  document.getElementById("result").innerHTML =
+    "Appointment booked for " + n +
+    "<br>Doctor: " + d +
+    "<br>Date: " + t;
+}
+</script>
+
+</body>
+</html>

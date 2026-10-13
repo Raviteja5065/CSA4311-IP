@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Reservation System</title>
+    <style>
+        body { font-family: Arial; background: #e6f7ff; text-align: center; }
+        input, select, button { padding: 10px; margin: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Online Flight Reservation</h1>
+    <p>Choose your destination</p>
+
+    <input type="text" id="name" placeholder="Passenger Name">
+
+    <select id="destination">
+        <option value="Delhi">Delhi - ₹4500</option>
+        <option value="Mumbai">Mumbai - ₹3500</option>
+        <option value="Hyderabad">Hyderabad - ₹2500</option>
+    </select>
+
+    <button onclick="bookFlight()">Book Flight</button>
+    <p id="result"></p>
+
+    <script>
+        function bookFlight() {
+            let name = document.getElementById("name").value;
+            let destination = document.getElementById("destination").value;
+
+            if (name.trim() === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter passenger name.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Flight booked successfully for " + name +
+                    ". Destination: " + destination;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Room Booking</title>
+    <style>
+        body { font-family: Arial; background: #fff8e7; text-align: center; }
+        input, button { padding: 10px; margin: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Online Hotel Room Booking</h1>
+    <h3>Deluxe Room - ₹2500 per day</h3>
+    <h3>Standard Room - ₹1500 per day</h3>
+
+    <input type="text" id="name" placeholder="Customer Name">
+    <select id="room">
+        <option value="Deluxe">Deluxe Room</option>
+        <option value="Standard">Standard Room</option>
+    </select>
+    <button onclick="bookRoom()">Book Room</button>
+
+    <p id="result"></p>
+
+    <script>
+        function bookRoom() {
+            let name = document.getElementById("name").value;
+            let room = document.getElementById("room").value;
+
+            if (name.trim() === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter your name.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Room booked successfully for " + name +
+                    ". Room type: " + room;
+            }
+        }
+    </script>
+</body>
+</html>

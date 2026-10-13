@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Reservation System</title>
+    <style>
+        body { font-family: Arial; background: #f0f0ff; text-align: center; }
+        input, select, button { padding: 10px; margin: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Online Train Reservation</h1>
+
+    <input type="text" id="name" placeholder="Passenger Name">
+
+    <select id="train">
+        <option value="Chennai Express">Chennai Express</option>
+        <option value="Bangalore Express">Bangalore Express</option>
+    </select>
+
+    <button onclick="reserveTrain()">Reserve Ticket</button>
+    <p id="result"></p>
+
+    <script>
+        function reserveTrain() {
+            let name = document.getElementById("name").value;
+            let train = document.getElementById("train").value;
+
+            if (name.trim() === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter passenger name.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Reservation successful! Passenger: " + name +
+                    ", Train: " + train;
+            }
+        }
+    </script>
+</body>
+</html>

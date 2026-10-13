@@ -1,0 +1,31 @@
+
+<html>
+<body>
+<h2>Beauty Parlour Booking</h2>
+
+Enter Name:
+<input id="name"><br><br>
+
+Select Service:
+<select id="service">
+  <option>Haircut</option>
+  <option>Facial</option>
+  <option>Hair Styling</option>
+</select><br><br>
+
+<button onclick="book()">Book Appointment</button>
+
+<p id="result"></p>
+
+<script>
+function book() {
+  let n = document.getElementById("name").value;
+  let s = document.getElementById("service").value;
+
+  document.getElementById("result").innerHTML =
+    "Appointment booked for " + n + ": " + s;
+}
+</script>
+
+</body>
+</html>
