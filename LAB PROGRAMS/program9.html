@@ -1,0 +1,28 @@
+
+<html>
+<head>
+<style>
+body { text-align: center; font-family: Arial; background: #eee; }
+h2 { color: blue; }
+button { padding: 10px; background: blue; color: white; }
+</style>
+</head>
+<body>
+<h2>TechSavvy Shopping</h2>
+
+<h3>Mobile Phone - Rs.15000</h3>
+<button onclick="buy('Mobile Phone')">Add to Cart</button>
+
+<h3>Laptop - Rs.40000</h3>
+<button onclick="buy('Laptop')">Add to Cart</button>
+
+<p id="result"></p>
+
+<script>
+function buy(item) {
+  document.getElementById("result").innerHTML =
+    item + " added to cart";
+}
+</script>
+</body>
+</html>

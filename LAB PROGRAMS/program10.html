@@ -1,0 +1,28 @@
+
+<html>
+<head>
+<style>
+body { text-align: center; font-family: Arial; background: #fce4ec; }
+h2 { color: purple; }
+button { padding: 10px; background: purple; color: white; }
+</style>
+</head>
+<body>
+<h2>StyleHub Fashion Store</h2>
+
+<h3>Shirt - Rs.500</h3>
+<button onclick="buy('Shirt')">Buy</button>
+
+<h3>Shoes - Rs.1000</h3>
+<button onclick="buy('Shoes')">Buy</button>
+
+<p id="result"></p>
+
+<script>
+function buy(item) {
+  document.getElementById("result").innerHTML =
+    item + " selected successfully";
+}
+</script>
+</body>
+</html>
