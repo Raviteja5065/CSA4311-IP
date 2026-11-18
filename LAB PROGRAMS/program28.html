@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas in Action | Community Innovation Forum</title>
+    <style>
+        :root {
+            --ink: #20302b;
+            --muted: #64736d;
+            --green: #176b55;
+            --lime: #d7ed9b;
+            --cream: #f7f5ed;
+            --white: #fff;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+        a { color: inherit; }
+        .hero {
+            padding: 28px max(6vw, 24px) 72px;
+            color: var(--white);
+            background: linear-gradient(125deg, #123f38, #176b55 65%, #49866a);
+        }
+        .topbar, .hero-content, .section, footer {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .brand { font-weight: 700; letter-spacing: .08em; }
+        .topbar a { text-decoration: none; }
+        .topbar .register-link {
+            padding: 10px 18px;
+            border-radius: 999px;
+            color: var(--ink);
+            background: var(--lime);
+            font-weight: 700;
+        }
+        .hero-content { padding-top: 70px; }
+        .eyebrow {
+            color: var(--lime);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        h1 {
+            max-width: 760px;
+            margin: 12px 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.7rem, 7vw, 5.3rem);
+            line-height: 1.02;
+        }
+        .hero-content > p { max-width: 630px; color: #e2eee8; font-size: 1.12rem; }
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 34px;
+            margin-top: 32px;
+        }
+        .event-meta div { min-width: 190px; }
+        .event-meta strong { display: block; color: var(--lime); }
+        .button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 13px 22px;
+            border: 0;
+            border-radius: 6px;
+            color: var(--ink);
+            background: var(--lime);
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .section { padding: 68px max(6vw, 24px); }
+        .section h2 {
+            margin: 0 0 12px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+        }
+        .section-intro { max-width: 720px; color: var(--muted); }
+        .purpose {
+            width: 100%;
+            max-width: none;
+            padding-right: max(6vw, 24px);
+            padding-left: max(6vw, 24px);
+            background: #e7efdf;
+        }
+        .purpose-inner { width: min(1120px, 100%); margin: 0 auto; }
+        .speaker-grid, .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 28px;
+        }
+        .speaker-card, .schedule-card, .register-card {
+            padding: 22px;
+            border: 1px solid #e3e7df;
+            border-radius: 12px;
+            background: var(--white);
+            box-shadow: 0 8px 24px #20302b0d;
+        }
+        .speaker-card { text-align: center; }
+        .speaker-card a { color: var(--green); font-weight: 700; text-decoration: none; }
+        .portrait {
+            display: block;
+            width: 116px;
+            height: 116px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: #dcebd8;
+        }
+        .speaker-card h3, .schedule-card h3 { margin: 8px 0 2px; }
+        .speaker-card p { margin: 0 0 8px; color: var(--muted); }
+        .schedule-card { border-top: 4px solid var(--green); }
+        .schedule-card time { color: var(--green); font-weight: 700; }
+        .register-section { background: #203c35; color: var(--white); }
+        .register-section .section-intro { color: #d2e0d9; }
+        .register-card { max-width: 650px; margin-top: 24px; color: var(--ink); }
+        label { display: block; margin: 12px 0 5px; font-weight: 700; }
+        input, select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #bbc8c0;
+            border-radius: 5px;
+            font: inherit;
+        }
+        .register-card .button { margin-top: 18px; }
+        #registration-message { color: var(--green); font-weight: 700; }
+        footer { padding: 24px; color: var(--muted); text-align: center; }
+        @media (max-width: 560px) {
+            .topbar { align-items: flex-start; }
+            .hero-content { padding-top: 52px; }
+            .section { padding-top: 52px; padding-bottom: 52px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav class="topbar" aria-label="Main navigation">
+            <a class="brand" href="#home">IDEAS IN ACTION</a>
+            <a class="register-link" href="#register">Register for the event</a>
+        </nav>
+        <div class="hero-content" id="home">
+            <div class="eyebrow">Community Innovation Forum · 2026</div>
+            <h1>Small ideas.<br>Lasting change.</h1>
+            <p>A one-day gathering for people building more inclusive, resilient communities through practical ideas and collaboration.</p>
+            <div class="event-meta">
+                <div><strong>Venue</strong>Greenwood Convention Centre<br>12 Garden Road, Bengaluru</div>
+                <div><strong>Date and time</strong>Saturday, 12 December 2026<br>9:00 AM – 4:30 PM</div>
+            </div>
+            <a class="button" href="#register">Save your place</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section purpose" id="purpose">
+            <div class="purpose-inner">
+                <div class="eyebrow" style="color:#176b55">Why join us?</div>
+                <h2>Ideas are stronger when we share them.</h2>
+                <p class="section-intro">The Community Innovation Forum brings together local leaders, students, nonprofit teams, educators, entrepreneurs, and anyone interested in making their community a better place to live. Attendees will learn from real projects, exchange approaches, and leave with ideas they can put into practice.</p>
+            </div>
+        </section>
+
+        <section class="section" id="speakers">
+            <div class="eyebrow" style="color:#176b55">Meet the speakers</div>
+            <h2>People moving ideas forward</h2>
+            <p class="section-intro">Select a speaker to read their session focus.</p>
+            <div class="speaker-grid">
+                <article class="speaker-card" id="speaker-ananya">
+                    <svg class="portrait" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Ananya Rao">
+                        <circle cx="60" cy="60" r="60" fill="#d7ed9b"/>
+                        <path d="M22 112c4-24 18-36 38-36s34 12 38 36" fill="#176b55"/>
+                        <circle cx="60" cy="47" r="23" fill="#b87551"/>
+                        <path d="M37 47c0-20 11-31 25-31 16 0 25 12 22 32-6-4-10-13-12-19-8 9-20 14-35 15z" fill="#263a34"/>
+                    </svg>
+                    <h3><a href="#speaker-ananya">Ananya Rao</a></h3>
+                    <p>Urban Sustainability Advocate</p>
+                    <span>Designing greener neighbourhoods</span>
+                </article>
+                <article class="speaker-card" id="speaker-kabir">
+                    <svg class="portrait" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Kabir Menon">
+                        <circle cx="60" cy="60" r="60" fill="#dce8f4"/>
+                        <path d="M20 112c5-25 19-36 40-36s35 11 40 36" fill="#31577a"/>
+                        <circle cx="60" cy="47" r="23" fill="#8f5b42"/>
+                        <path d="M37 43c2-20 13-29 26-28 14 1 22 11 20 27-9-2-16-8-20-14-6 7-14 12-26 15z" fill="#232c30"/>
+                    </svg>
+                    <h3><a href="#speaker-kabir">Kabir Menon</a></h3>
+                    <p>Founder, Open Learning Lab</p>
+                    <span>Making learning accessible to all</span>
+                </article>
+                <article class="speaker-card" id="speaker-meera">
+                    <svg class="portrait" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Meera Joseph">
+                        <circle cx="60" cy="60" r="60" fill="#f3dfd1"/>
+                        <path d="M20 112c5-25 19-36 40-36s35 11 40 36" fill="#9c5d48"/>
+                        <circle cx="60" cy="47" r="23" fill="#b9775c"/>
+                        <path d="M36 49c-2-21 8-34 25-34 17 0 27 14 23 38l-8 10-5-29c-9 9-19 13-33 14l-2 16-7-8z" fill="#302b31"/>
+                    </svg>
+                    <h3><a href="#speaker-meera">Meera Joseph</a></h3>
+                    <p>Community Health Coordinator</p>
+                    <span>Building trust through local action</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="schedule" style="background:#edf1eb">
+            <div class="eyebrow" style="color:#176b55">The day at a glance</div>
+            <h2>Event schedule</h2>
+            <div class="schedule-grid">
+                <article class="schedule-card"><time>9:00 AM</time><h3>Welcome and opening talk</h3><p>Meet the community and set the day's shared goals.</p></article>
+                <article class="schedule-card"><time>10:00 AM</time><h3>Speaker sessions</h3><p>Practical stories on sustainability, learning, and health.</p></article>
+                <article class="schedule-card"><time>12:30 PM</time><h3>Lunch and networking</h3><p>Connect with participants and local project teams.</p></article>
+                <article class="schedule-card"><time>2:00 PM</time><h3>Collaborative workshop</h3><p>Turn a community challenge into a first action plan.</p></article>
+                <article class="schedule-card"><time>4:00 PM</time><h3>Closing and next steps</h3><p>Share ideas and learn how to stay involved.</p></article>
+            </div>
+        </section>
+
+        <section class="section register-section" id="register">
+            <div class="eyebrow">Be part of it</div>
+            <h2>Register for the forum</h2>
+            <p class="section-intro">Complete the form to register your interest. This sample page demonstrates the registration flow.</p>
+            <form class="register-card" id="registration-form">
+                <label for="full-name">Full name</label>
+                <input id="full-name" name="name" autocomplete="name" required>
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <label for="audience">I am attending as</label>
+                <select id="audience" name="audience" required>
+                    <option value="">Choose one</option>
+                    <option>Student</option>
+                    <option>Community member</option>
+                    <option>Nonprofit or educator</option>
+                    <option>Entrepreneur or professional</option>
+                    <option>Other</option>
+                </select>
+                <button class="button" type="submit">Submit registration</button>
+                <p id="registration-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <footer>Community Innovation Forum · Greenwood Convention Centre, Bengaluru</footer>
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("registration-message").textContent =
+                "Thank you, " + document.getElementById("full-name").value + "! Your registration has been recorded for this demo.";
+            this.reset();
+        });
+    </script>
+</body>
+</html>

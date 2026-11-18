@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Journal of Scientific and Social Excellence | IJSSE</title>
+    <style>
+        :root {
+            --navy: #18334c;
+            --blue: #245c83;
+            --gold: #c3913e;
+            --paper: #f5f7f8;
+            --ink: #263746;
+            --muted: #61717d;
+            --line: #dbe3e8;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+        a { color: var(--blue); }
+        .masthead { padding: 28px 5vw; color: white; background: var(--navy); }
+        .masthead-inner, .nav-inner, main, footer { width: min(1180px, 100%); margin: 0 auto; }
+        .masthead-inner { display: flex; align-items: center; gap: 20px; }
+        .seal {
+            display: grid;
+            width: 68px;
+            height: 68px;
+            flex: 0 0 68px;
+            place-items: center;
+            border: 2px solid #e0bd79;
+            border-radius: 50%;
+            color: #f4d28e;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .masthead h1 { margin: 0; font: 700 clamp(1.35rem, 3vw, 2rem) Georgia, "Times New Roman", serif; }
+        .masthead p { margin: 3px 0 0; color: #dce6ed; font-size: .94rem; }
+        .issn { margin-left: auto; text-align: right; white-space: nowrap; }
+        .issn span { display: block; }
+        .main-nav { position: sticky; z-index: 5; top: 0; color: white; background: var(--blue); }
+        .nav-inner { display: flex; flex-wrap: wrap; gap: 0; }
+        .nav-inner a { padding: 12px 14px; color: white; font-size: .92rem; text-decoration: none; }
+        .nav-inner a:hover, .nav-inner a:focus { background: #19486b; }
+        .hero { padding: 54px 5vw; color: white; background: linear-gradient(115deg, #245c83, #3c7895); }
+        .hero-inner { width: min(1180px, 100%); margin: 0 auto; }
+        .hero h2 { max-width: 780px; margin: 0 0 12px; font: 700 clamp(2rem, 5vw, 3.4rem) Georgia, "Times New Roman", serif; line-height: 1.12; }
+        .hero p { max-width: 760px; color: #edf4f8; }
+        .hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+        .button, button {
+            display: inline-block;
+            padding: 10px 16px;
+            border: 0;
+            border-radius: 5px;
+            color: white;
+            background: var(--blue);
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .hero .button { color: var(--navy); background: #f2d89e; }
+        main { padding: 22px 5vw 55px; }
+        section { scroll-margin-top: 62px; }
+        .panel {
+            margin: 22px 0;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            background: white;
+            box-shadow: 0 4px 18px #18334c0a;
+        }
+        .panel h2 { margin: 0 0 8px; color: var(--navy); font: 700 1.8rem Georgia, "Times New Roman", serif; }
+        .panel h3 { margin: 0 0 8px; color: var(--navy); }
+        .panel h4 { margin: 16px 0 6px; color: var(--blue); }
+        .lead { max-width: 850px; color: var(--muted); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 18px; }
+        .card { padding: 18px; border: 1px solid var(--line); border-radius: 7px; background: #fbfcfd; }
+        .card p:last-child { margin-bottom: 0; }
+        .subnav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0 20px; }
+        .subnav a { font-size: .94rem; }
+        .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .list { padding-left: 20px; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+        label { display: block; margin-bottom: 4px; font-weight: 700; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #b9c7d0;
+            border-radius: 4px;
+            color: var(--ink);
+            background: white;
+            font: inherit;
+        }
+        textarea { min-height: 90px; resize: vertical; }
+        .form-field { margin-bottom: 12px; }
+        form button { margin-top: 8px; }
+        .notice { padding: 12px 15px; border-left: 4px solid var(--gold); background: #fbf5e9; }
+        .form-status { min-height: 1.5em; color: #176b55; font-weight: 700; }
+        footer { padding: 26px 5vw; color: #e4edf2; background: var(--navy); }
+        footer a { color: #f2d89e; }
+        @media (max-width: 650px) {
+            .masthead-inner { align-items: flex-start; flex-wrap: wrap; }
+            .issn { width: 100%; margin-left: 88px; text-align: left; }
+            .nav-inner a { padding: 9px 10px; }
+            .panel { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="masthead" id="home">
+        <div class="masthead-inner">
+            <div class="seal" aria-label="IJSSE journal emblem">IJSSE</div>
+            <div>
+                <h1>International Journal of Scientific and Social Excellence</h1>
+                <p>Research, knowledge, and excellence across disciplines</p>
+            </div>
+            <div class="issn">
+                <span>Print ISSN: 2395-1443</span>
+                <span>Online ISSN: 2395-1451</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Journal navigation">
+        <div class="nav-inner">
+            <a href="#home">Home</a>
+            <a href="#about">About Journal</a>
+            <a href="#ethics">Publication Ethics</a>
+            <a href="#editors">For Editors</a>
+            <a href="#reviewers">For Reviewers</a>
+            <a href="#authors">For Authors</a>
+            <a href="#articles">Articles</a>
+            <a href="#call-for-papers">Call for Papers</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <h2>Supporting rigorous research and transparent publishing</h2>
+            <p>The International Journal of Scientific and Social Excellence (IJSSE) provides a professional platform for scholarly work and a clear workflow for authors, reviewers, and editors.</p>
+            <div class="hero-links">
+                <a class="button" href="#submit-manuscript">Submit a manuscript</a>
+                <a class="button" href="#author-guidelines">Read author guidelines</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="panel" id="about">
+            <h2>About the Journal</h2>
+            <p class="lead">IJSSE aims to encourage the exchange of sound scholarly research in scientific and social disciplines. The journal supports responsible research, constructive peer review, and accessible communication of published work.</p>
+            <div class="grid">
+                <article class="card"><h3>Mission</h3><p>To provide a fair, professional, and transparent route for research from submission through peer review and publication.</p></article>
+                <article class="card"><h3>Scope</h3><p>The journal welcomes original work and reviews across scientific, social, interdisciplinary, and applied research areas.</p></article>
+                <article class="card"><h3>Journal identifiers</h3><p>Print ISSN <strong>2395-1443</strong><br>Online ISSN <strong>2395-1451</strong></p></article>
+            </div>
+            <p class="notice">The page demonstrates the journal's information and workflow menus. Current journal policies and indexing details should be confirmed with the publisher.</p>
+        </section>
+
+        <section class="panel" id="ethics">
+            <h2>Publication Ethics</h2>
+            <p>Authors, reviewers, and editors are expected to uphold research integrity, declare relevant conflicts of interest, protect confidential material, and avoid plagiarism, duplicate submission, and fabricated or falsified results. Concerns should be reported to the editorial office for fair investigation.</p>
+        </section>
+
+        <section class="panel" id="editors">
+            <h2>For Editors</h2>
+            <nav class="subnav" aria-label="Editor links">
+                <a href="#editor-registration">Editor registration</a>
+                <a href="#editor-login">Editor login</a>
+                <a href="#editorial-committee">Editorial committee</a>
+                <a href="#editor-responsibility">Editor responsibility</a>
+            </nav>
+            <div class="two-col">
+                <div class="card" id="editor-registration">
+                    <h3>Editor registration</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="editor-name">Name</label><input id="editor-name" name="name" required></div>
+                        <div class="form-field"><label for="editor-email">Institutional email</label><input id="editor-email" name="email" type="email" required></div>
+                        <button type="submit">Register as editor</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+                <div class="card" id="editor-login">
+                    <h3>Editor login</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="editor-login-email">Email</label><input id="editor-login-email" type="email" required></div>
+                        <div class="form-field"><label for="editor-password">Password</label><input id="editor-password" type="password" required></div>
+                        <button type="submit">Editor login</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="grid">
+                <article class="card" id="editorial-committee"><h3>Editorial committee</h3><p>View the editorial committee, its subject areas, and institutional affiliations.</p></article>
+                <article class="card" id="editor-responsibility"><h3>Editor responsibility</h3><p>Editors oversee fair initial assessment, suitable reviewer selection, confidential handling, and publication decisions based on scholarly merit.</p></article>
+                <article class="card"><h3>Editorial dashboard</h3><p>Manage submissions, coordinate peer reviews, record decisions, and oversee accepted papers through publication.</p></article>
+            </div>
+        </section>
+
+        <section class="panel" id="reviewers">
+            <h2>For Reviewers</h2>
+            <nav class="subnav" aria-label="Reviewer links">
+                <a href="#reviewer-registration">Reviewer registration</a>
+                <a href="#reviewer-login">Reviewer login</a>
+                <a href="#article-reviewers">Reviewers by article</a>
+            </nav>
+            <div class="two-col">
+                <div class="card" id="reviewer-registration">
+                    <h3>Reviewer registration</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="reviewer-name">Name</label><input id="reviewer-name" required></div>
+                        <div class="form-field"><label for="reviewer-email">Email</label><input id="reviewer-email" type="email" required></div>
+                        <div class="form-field"><label for="reviewer-expertise">Area of expertise</label><input id="reviewer-expertise" required></div>
+                        <button type="submit">Register as reviewer</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+                <div class="card" id="reviewer-login">
+                    <h3>Reviewer login</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="reviewer-login-email">Email</label><input id="reviewer-login-email" type="email" required></div>
+                        <div class="form-field"><label for="reviewer-password">Password</label><input id="reviewer-password" type="password" required></div>
+                        <button type="submit">Reviewer login</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+            </div>
+            <article class="card" id="article-reviewers">
+                <h3>Reviewers for a specific article</h3>
+                <p>Search or select an article to view its assigned reviewers. Reviewer identities are shown only when journal policy permits disclosure.</p>
+                <label for="review-article">Article title or ID</label>
+                <input id="review-article" placeholder="Enter an article title or ID">
+            </article>
+        </section>
+
+        <section class="panel" id="authors">
+            <h2>For Authors</h2>
+            <nav class="subnav" aria-label="Author links">
+                <a href="#author-registration">Author registration</a>
+                <a href="#author-login">Author login</a>
+                <a href="#author-papers">Papers under an author</a>
+                <a href="#author-instructions">Instructions</a>
+                <a href="#publication-charge">Publication charge</a>
+                <a href="#article-template">Article template</a>
+                <a href="#copyright-template">Copyright form</a>
+                <a href="#author-guidelines">Author guidelines</a>
+            </nav>
+            <div class="two-col">
+                <div class="card" id="author-registration">
+                    <h3>Author registration</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="author-name">Name</label><input id="author-name" required></div>
+                        <div class="form-field"><label for="author-email">Email</label><input id="author-email" type="email" required></div>
+                        <button type="submit">Register as author</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+                <div class="card" id="author-login">
+                    <h3>Author login</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="author-login-email">Email</label><input id="author-login-email" type="email" required></div>
+                        <div class="form-field"><label for="author-password">Password</label><input id="author-password" type="password" required></div>
+                        <button type="submit">Author login</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="grid">
+                <article class="card" id="author-papers"><h3>List of papers under an author</h3><p>After login, authors can view their submitted manuscripts and current submission status.</p></article>
+                <article class="card" id="author-instructions"><h3>Author instructions</h3><p>Prepare an original manuscript, include complete author details and references, and submit all required declarations.</p></article>
+                <article class="card" id="publication-charge"><h3>Publication charge</h3><p>Consult the publisher for current fees, exemptions, and payment instructions before submitting.</p></article>
+                <article class="card" id="article-template"><h3>Article template</h3><p>Download the journal article template from the publisher's official resources.</p><a href="#submit-manuscript">Go to manuscript submission</a></article>
+                <article class="card" id="copyright-template"><h3>Copyright form template</h3><p>Complete the required copyright or license form only after reviewing the journal's current terms.</p></article>
+                <article class="card" id="author-guidelines"><h3>Author guidelines</h3><p>Follow the journal's instructions for formatting, citations, figures, ethical declarations, and submission files.</p></article>
+            </div>
+        </section>
+
+        <section class="panel" id="articles">
+            <h2>Articles</h2>
+            <nav class="subnav" aria-label="Article lists">
+                <a href="#current-issue">Current issue</a>
+                <a href="#archive">Archive</a>
+                <a href="#most-viewed">Most viewed</a>
+                <a href="#most-cited">Most cited</a>
+                <a href="#about-to-print">About to print</a>
+            </nav>
+            <div class="grid">
+                <article class="card" id="current-issue"><h3>Current issue</h3><p>Browse articles in the latest published issue.</p></article>
+                <article class="card" id="archive"><h3>Archive</h3><p>Explore previously published journal issues.</p></article>
+                <article class="card" id="most-viewed"><h3>Most viewed articles</h3><p>Find articles receiving the most reader visits.</p></article>
+                <article class="card" id="most-cited"><h3>Most cited articles</h3><p>Browse articles with the highest citation counts.</p></article>
+                <article class="card" id="about-to-print"><h3>About to print</h3><p>See accepted articles preparing for publication.</p></article>
+            </div>
+        </section>
+
+        <section class="panel" id="call-for-papers">
+            <h2>Call for Papers</h2>
+            <nav class="subnav" aria-label="Call for papers links">
+                <a href="#submit-manuscript">Submit manuscript</a>
+                <a href="#indexed-list">Indexed list</a>
+                <a href="#newsletter">Subscribe to newsletters</a>
+                <a href="#feedback">View feedback</a>
+            </nav>
+            <div class="two-col">
+                <article class="card" id="indexed-list"><h3>Indexed list</h3><p>Consult the journal's official publisher page for current indexing information.</p></article>
+                <div class="card" id="newsletter">
+                    <h3>Subscribe to newsletters</h3>
+                    <form class="demo-form">
+                        <div class="form-field"><label for="newsletter-email">Email address</label><input id="newsletter-email" type="email" required></div>
+                        <button type="submit">Subscribe</button><p class="form-status" role="status"></p>
+                    </form>
+                </div>
+                <div class="card" id="feedback">
+                    <h3>View feedback</h3>
+                    <p>Read feedback and updates published by the journal office.</p>
+                </div>
+            </div>
+            <div class="card" id="submit-manuscript" style="margin-top:16px">
+                <h3>Submit a manuscript</h3>
+                <p>Use the journal's submission system to upload your manuscript and track its progress. This sample form demonstrates the page layout only.</p>
+                <form class="demo-form">
+                    <div class="form-grid">
+                        <div class="form-field"><label for="manuscript-title">Manuscript title</label><input id="manuscript-title" required></div>
+                        <div class="form-field"><label for="manuscript-author">Corresponding author</label><input id="manuscript-author" required></div>
+                    </div>
+                    <button type="submit">Submit manuscript</button><p class="form-status" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="panel" id="contact">
+            <h2>Contact Us</h2>
+            <p>For questions about submissions, peer review, or published articles, contact the IJSSE editorial office.</p>
+            <form class="demo-form">
+                <div class="form-grid">
+                    <div class="form-field"><label for="contact-name">Your name</label><input id="contact-name" required></div>
+                    <div class="form-field"><label for="contact-email">Email address</label><input id="contact-email" type="email" required></div>
+                </div>
+                <div class="form-field"><label for="contact-message">Message</label><textarea id="contact-message" required></textarea></div>
+                <button type="submit">Send message</button><p class="form-status" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div><strong>International Journal of Scientific and Social Excellence</strong></div>
+        <div>Print ISSN 2395-1443 · Online ISSN 2395-1451</div>
+        <div><a href="#home">Back to top</a></div>
+    </footer>
+    <script>
+        document.querySelectorAll(".demo-form").forEach(function (form) {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                form.querySelector(".form-status").textContent =
+                    "Thank you. This sample page does not send data to a journal server.";
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

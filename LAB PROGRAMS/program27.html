@@ -1,0 +1,89 @@
+1. index.jsp
+<html>
+<body>
+<h2>Vehicle Breakdown Assistance</h2>
+<form action="vehicle" method="post">
+Name: <input name="name"><br><br>
+Location: <input name="location"><br><br>
+Details: <input name="details"><br><br>
+Role:
+<select name="role">
+<option>User</option>
+<option>Mechanic</option>
+<option>Admin</option>
+</select><br><br>
+<button name="action" value="register">Register</button>
+<button name="action" value="login">Login</button>
+<button name="action" value="search">Search Mechanic</button>
+<button name="action" value="location">View Location</button>
+<button name="action" value="feedback">Post Feedback</button>
+<button name="action" value="profile">My Profile</button>
+<button name="action" value="business">Post Business</button>
+<button name="action" value="manage">Manage Business</button>
+<button name="action" value="view">View Feedback</button>
+<button name="action" value="approve">Approve Mechanic</button>
+<button name="action" value="logout">Logout</button>
+</form>
+</body>
+</html>
+2. VehicleServlet.java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+public class VehicleServlet extends HttpServlet {
+    ArrayList<String> mechanics = new ArrayList<>();
+    ArrayList<String> feedbacks = new ArrayList<>();
+    protected void doPost(HttpServletRequest req,
+    HttpServletResponse res) throws IOException {
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+        String action = req.getParameter("action");
+        String name = req.getParameter("name");
+        String location = req.getParameter("location");
+        String details = req.getParameter("details");
+        if ("register".equals(action))
+            out.println("Registration Successful");
+        else if ("login".equals(action))
+            out.println("Login Successful");
+        else if ("search".equals(action)) {
+            for (String m : mechanics)
+                if (m.contains(location))
+                    out.println(m + "<br>");
+        }
+        else if ("location".equals(action))
+            out.println("Mechanic Location: " + location);
+        else if ("feedback".equals(action)) {
+            feedbacks.add(details);
+            out.println("Feedback Submitted");
+        }
+        else if ("profile".equals(action))
+            out.println("User Profile: " + name);
+        else if ("business".equals(action)) {
+            mechanics.add(name + " - " + location);
+            out.println("Business Posted Successfully");
+        }
+        else if ("manage".equals(action))
+            out.println("Business Details Managed");
+        else if ("view".equals(action)) {
+            for (String f : feedbacks)
+                out.println(f + "<br>");
+        }
+        else if ("approve".equals(action))
+            out.println("Mechanic Approved Successfully");
+        else if ("logout".equals(action))
+            out.println("Logout Successful");
+    }
+}
+3. WEB-INF/web.xml
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+version="3.1">
+<servlet>
+<servlet-name>VehicleServlet</servlet-name>
+<servlet-class>VehicleServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>VehicleServlet</servlet-name>
+<url-pattern>/vehicle</url-pattern>
+</servlet-mapping>
+</web-app>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReNewMarket</title>
+    <style>
+        body { font-family: Arial; background: #f0fff0; text-align: center; }
+        header { background: #287a3d; color: white; padding: 20px; }
+        .item { display: inline-block; background: white; padding: 20px; margin: 10px; }
+        button { background: #287a3d; color: white; padding: 8px; border: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ReNewMarket</h1>
+    <p>Buy and Sell Second-Hand Products</p>
+</header>
+
+<h2>Available Products</h2>
+
+<div id="products">
+    <div class="item">
+        <h3>Used Laptop</h3>
+        <p>Price: ₹20,000</p>
+        <button onclick="alert('Used Laptop selected')">View Details</button>
+    </div>
+
+    <div class="item">
+        <h3>Used Bicycle</h3>
+        <p>Price: ₹3,000</p>
+        <button onclick="alert('Used Bicycle selected')">View Details</button>
+    </div>
+</div>
+
+<h2>Sell Your Product</h2>
+
+<form onsubmit="addProduct(event)">
+    <input type="text" id="name" placeholder="Product Name" required>
+    <input type="number" id="price" placeholder="Price" required>
+    <button type="submit">Add Product</button>
+</form>
+
+<script>
+    function addProduct(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+
+        let product = document.createElement("div");
+        product.className = "item";
+        product.innerHTML = "<h3>" + name + "</h3>" +
+            "<p>Price: ₹" + price + "</p>";
+
+        document.getElementById("products").appendChild(product);
+
+        alert("Product added successfully!");
+    }
+</script>
+
+</body>
+</html>
